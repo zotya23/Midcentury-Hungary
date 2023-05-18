@@ -1,0 +1,8 @@
+<body>
+  <title>Mid-century Hungary</title>
+  <app-list
+    [galleryObjectInput]="galleryObject"
+    (imageObjectEmitter)="loadImage($event)"
+  ></app-list>
+  <app-viewer [imageInput]="chosenImage"></app-viewer>
+</body>

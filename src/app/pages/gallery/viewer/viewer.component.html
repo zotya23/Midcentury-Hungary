@@ -1,0 +1,86 @@
+<body>
+  <title>Mid-century Hungary</title>
+
+  <div class="div-card" *ngIf="imageInput">
+    <mat-card fxLayout fxLayoutGap="20px">
+      <span fxFlex="1 1 50%">
+        <mat-card-header>
+          <mat-card-title>{{ imageInput.user_name }}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <img class="galleryImage" [src]="loadedImage" />
+          <div>{{ imageInput.user_name }}</div>
+        </mat-card-content>
+      </span>
+      <span fxFlex="1 1 50%">
+        <mat-card-actions class="commentinput">
+          <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
+            <div>
+              <mat-form-field>
+                <mat-label for="username">Username: </mat-label>
+                <input matInput type="text" formControlName="username" />
+              </mat-form-field>
+            </div>
+            <div class="break"></div>
+            <div>
+              <mat-form-field>
+                <mat-label for="comment">Comment: </mat-label>
+                <textarea
+                  matInput
+                  rows="10"
+                  cols="50"
+                  formControlName="comment"
+                ></textarea>
+              </mat-form-field>
+            </div>
+
+            <div class="break"></div>
+            <div>
+              <button mat-raised-button color="primary" type="submit">
+                Add comment
+              </button>
+            </div>
+          </form>
+        </mat-card-actions>
+      </span>
+    </mat-card>
+
+    <div class="tablecard">
+      <div *ngIf="comments.length">
+        <mat-table [dataSource]="comments">
+          <ng-container matColumnDef="username">
+            <mat-header-cell *matHeaderCellDef>User</mat-header-cell>
+            <mat-cell *matCellDef="let comment">{{
+              comment.username
+            }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="comment">
+            <mat-header-cell *matHeaderCellDef>Comment</mat-header-cell>
+            <mat-cell *matCellDef="let comment">{{ comment.comment }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+            <mat-cell *matCellDef="let comment">{{
+              comment.date | dateFormat
+            }}</mat-cell>
+          </ng-container>
+
+          <mat-header-row
+            *matHeaderRowDef="['username', 'comment', 'date']"
+          ></mat-header-row>
+          <mat-row
+            *matRowDef="
+              let comment;
+              columns: ['username', 'comment', 'date'];
+              odd: true
+            "
+            [ngClass]="{ 'example-odd': true, 'example-even': false }"
+          ></mat-row>
+        </mat-table>
+      </div>
+    </div>
+  </div>
+</body>

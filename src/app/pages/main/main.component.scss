@@ -1,0 +1,56 @@
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main_component {
+  padding: 10px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.card_container {
+  flex: 0 0 calc(100% / 4);
+  margin: 10px;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.imgincard{
+  height: 400px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .card_container {
+    flex: 0 0 calc(100% - 40px);
+  }
+}
+
+h1{
+  align-self: center;
+}
+.imgincard {
+  transition: transform 0.3s ease-out;
+}
+
+.imgincard:hover {
+  transform: rotateY(180deg);
+}

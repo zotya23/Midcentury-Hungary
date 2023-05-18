@@ -1,0 +1,47 @@
+.div-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.main_component {
+  height: 85vh;
+
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+form {
+  display: inline-grid;
+  width: 50%;
+  align-self: center;
+}
+
+.subForm {
+  width: 100%;
+}
+.buttons {
+  padding: 5px;
+}
+button {
+  width: 100px;
+  
+}
+mat-form-field {
+  padding: 5px 5px 5px 5px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+}
+mat-card {
+  width: 90%;
+  padding: 40px;
+  text-align: center;
+  justify-content: center;
+}

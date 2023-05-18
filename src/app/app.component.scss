@@ -1,0 +1,26 @@
+a {
+  text-decoration: none;
+  color: rgb(230, 220, 201);
+}
+
+a:hover,
+a:active {
+  color: white;
+}
+.navigaton-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+body{
+  text-decoration: none;
+  color: rgb(230, 220, 201);
+}
+.toolbar{
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif;
+}

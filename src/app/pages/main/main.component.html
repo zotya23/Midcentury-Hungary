@@ -1,0 +1,16 @@
+<div class="main_container">
+  <div class="card_container" *ngFor="let image of images">
+    <mat-card>
+      <ng-container *ngIf="image.image_url">
+        <img class="imgincard" [src]="image.image_url" alt="{{ image.id }}"
+          [@flip]="image.isFlipped ? 'back' : 'front'"
+          (mouseenter)="image.isFlipped = true"
+          (mouseleave)="image.isFlipped = false" />
+      </ng-container>
+      <mat-card-content>
+        <h2>{{ image.name }}</h2>
+        <p>Price: {{ image.price }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

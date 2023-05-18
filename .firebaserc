@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webfejl-2023-52763": {
+      "hosting": {
+        "week-04": [
+          "webfejl-2023-52763"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webfejl-2023-52763"
+  }
+}
