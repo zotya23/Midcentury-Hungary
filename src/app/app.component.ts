@@ -25,6 +25,7 @@ type MyTheme = 'dark' | 'light';
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
+  isDarkTheme: boolean = true;
   title(title: any) {
     throw new Error('Method not implemented.');
   }
@@ -48,7 +49,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.routes = this.router.config.map((conf) => conf.path) as string[];
-
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((evts: any) => {
@@ -70,6 +70,8 @@ export class AppComponent implements OnInit {
         localStorage.setItem('user', JSON.stringify('null'));
       }
     );
+
+    this.isDarkTheme = localStorage.getItem('theme')==="Dark" ? true : false;
   }
 
   changePage(selectedPage: string) {
@@ -95,5 +97,8 @@ export class AppComponent implements OnInit {
       .catch((error) => {
         console.error(error);
       });
+  }
+  storeThemeSelection() {
+    localStorage.setItem('theme', this.isDarkTheme ? 'Dark' : 'Light');
   }
 }

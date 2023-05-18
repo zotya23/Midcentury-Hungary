@@ -1,5 +1,5 @@
 <body>
-  <div class="main_component">
+  <div class="main_component div-flex">
     <mat-card class="div-flex">
       <h1>Register an account!</h1>
       <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
@@ -15,7 +15,7 @@
           <mat-label for="rePassword">Confirm password: </mat-label>
           <input matInput type="password" formControlName="rePassword" />
         </mat-form-field>
-        <div formGroupName="name" class="subForm">
+        <div class="name" formGroupName="name" class="subForm">
           <mat-form-field>
             <mat-label for="firstname">First name: </mat-label>
             <input matInput type="text" formControlName="firstname" />

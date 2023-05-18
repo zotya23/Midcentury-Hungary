@@ -11,15 +11,11 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$week-04-primary: mat.define-palette(mat.$indigo-palette);
-$week-04-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
+$week-04-primary: mat.define-palette(mat.$light-blue-palette);
+$week-04-accent: mat.define-palette(mat.$light-green-palette,);
 $week-04-warn: mat.define-palette(mat.$red-palette);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$week-04-theme: mat.define-dark-theme(
+$week-04-theme: mat.define-light-theme(
   (
     color: (
       primary: $week-04-primary,
@@ -28,12 +24,35 @@ $week-04-theme: mat.define-dark-theme(
     ),
   )
 );
+@include mat.all-component-themes($week-04-theme);
+
+//for dark theme
+$week-04-primary-dark: mat.define-palette(mat.$orange-palette);
+$week-04-accent-dark: mat.define-palette(mat.$yellow-palette,);
+$week-04-warn-dark: mat.define-palette(mat.$red-palette);
+
+
+$week-04-theme-dark: mat.define-dark-theme(
+  (
+    color: (
+      primary: $week-04-primary-dark,
+      accent: $week-04-accent-dark,
+      warn: $week-04-warn-dark,
+    ),
+  )
+);
 
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($week-04-theme);
+
+
+
+
+.dark-theme-mode{
+  @include mat.all-component-themes($week-04-theme-dark)
+}
 
 /* You can add global styles to this file, and also import other style files */
 $bgcolor: azure;
@@ -45,13 +64,13 @@ html {
 html,
 body {
   height: 100%;
-  color: rgb(230, 220, 201);
+  //color: rgb(230, 220, 201);
 }
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  color: rgb(230, 220, 201);
+  //color: rgb(230, 220, 201);
 }
 
 .loading-indicator {

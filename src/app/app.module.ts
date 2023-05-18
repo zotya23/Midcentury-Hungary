@@ -21,7 +21,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ThemeService } from './shared/services/theme.service';
-import {MatSelectModule } from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [AppComponent, MenuComponent],
@@ -40,6 +40,7 @@ import {MatSelectModule } from '@angular/material/select';
     MatListModule,
     MatSlideToggleModule,
     MatSelectModule,
+
     AngularFireModule.initializeApp(environment.firebase),
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),

@@ -35,8 +35,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       .login(this.email.value, this.password.value)
       .then((cred) => {
         console.log(cred);
-        this.router.navigateByUrl('/main');
+        
         this.loading = false;
+        this.router.navigateByUrl('/main');
       })
       .catch((error) => {
         console.error(error);

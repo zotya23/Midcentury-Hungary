@@ -1,5 +1,5 @@
 .div-flex {
-  display: flex;
+  
   flex-direction: column;
   justify-content: center;
   text-align: center;
@@ -13,12 +13,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 form {
   display: inline-grid;
-  width: 50%;
+  width: 70%;
   align-self: center;
 }
 
@@ -45,3 +46,4 @@ mat-card {
   text-align: center;
   justify-content: center;
 }
+
