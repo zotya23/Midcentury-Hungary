@@ -13,7 +13,7 @@
 // hue. Available color palettes: https://material.io/design/color/
 $week-04-primary: mat.define-palette(mat.$light-blue-palette);
 $week-04-accent: mat.define-palette(mat.$light-green-palette,);
-$week-04-warn: mat.define-palette(mat.$red-palette);
+$week-04-warn: mat.define-palette(mat.$grey-palette);
 
 $week-04-theme: mat.define-light-theme(
   (
@@ -29,7 +29,7 @@ $week-04-theme: mat.define-light-theme(
 //for dark theme
 $week-04-primary-dark: mat.define-palette(mat.$orange-palette);
 $week-04-accent-dark: mat.define-palette(mat.$yellow-palette,);
-$week-04-warn-dark: mat.define-palette(mat.$red-palette);
+$week-04-warn-dark: mat.define-palette(mat.$grey-palette);
 
 
 $week-04-theme-dark: mat.define-dark-theme(
@@ -48,17 +48,15 @@ $week-04-theme-dark: mat.define-dark-theme(
 // that you are using.
 
 
-
-
 .dark-theme-mode{
   @include mat.all-component-themes($week-04-theme-dark)
 }
 
 /* You can add global styles to this file, and also import other style files */
-$bgcolor: azure;
+$bgcolor: rgb(111, 111, 111);
 
 html {
-  background-color: $bgcolor;
+  background: $bgcolor;
 }
 
 html,

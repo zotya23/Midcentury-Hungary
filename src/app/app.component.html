@@ -14,39 +14,42 @@
       ></app-menu>
     </mat-sidenav>
 
-    <mat-sidenav-content  class="mat-app-background" [ngClass]="{'dark-theme-mode' : isDarkTheme}">
+    <mat-sidenav-content
+      class="mat-app-background"
+      [ngClass]="{ 'dark-theme-mode': isDarkTheme }"
+    >
       <mat-toolbar>
-        
         <div fxHide.gt-xs>
           <button mat-icon-button (click)="onToggleSidenav(sidenav)">
             <mat-icon>menu</mat-icon>
           </button>
         </div>
-        <span >
+        <span>
           <div>Mid-century Hungary</div>
         </span>
-        <span style="margin-left: 30px;">
-          <mat-slide-toggle [(ngModel)]="isDarkTheme" labelPosition="before" (change)="storeThemeSelection()">
-             <mat-icon>bedtime</mat-icon>
-            </mat-slide-toggle>
+        <span style="margin-left: 30px">
+          <mat-slide-toggle
+            [(ngModel)]="isDarkTheme"
+            labelPosition="before"
+            (change)="storeThemeSelection()"
+          >
+            <mat-icon>bedtime</mat-icon>
+          </mat-slide-toggle>
         </span>
 
         <div class="toolbar"></div>
         <div class="toolbar" fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-          
-          
           <ul fxLayout fxLayoutGap="10" class="navigaton-items">
             <li *ngIf="!loggedInUser"><a routerLink="/login">Login</a></li>
             <li *ngIf="loggedInUser">
               <a routerLink="/login" (click)="logout()">Logout</a>
             </li>
-            <li><a routerLink="/signup">Registor</a></li>
+            <li><a routerLink="/signup">Registration</a></li>
             <li><a routerLink="/main">Main</a></li>
             <li><a routerLink="/gallery">Inspiration</a></li>
             <li><a routerLink="/contact">Contact</a></li>
           </ul>
         </div>
-       
       </mat-toolbar>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
