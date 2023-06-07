@@ -7,13 +7,11 @@
 
 .galleryImage {
   width: 60%;
-  min-width: 170px;
-
-
+  min-width: 150px;
 }
 
 .break {
-  flex-basis: 100%;
+  flex-basis: 90%;
   height: 0;
 }
 
@@ -35,19 +33,18 @@ form {
 }
 
 .div-card {
-  padding: 3%;
+  padding: 2%;
 
 }
 .tablecard{
-  padding-left: 50px;
+  padding-left: 2%;
   padding-top: 25px;
-  padding-right: 50px;
+  padding-right: 2%;
 
-
-  
 }
 .commentinput{
   padding: 15px;
+
 }
 
 mat-form-field {
@@ -58,3 +55,8 @@ mat-form-field {
 mat-card-content {
   text-align: center;
 }
+
+.textinput{
+  min-width: 10px;
+}
+

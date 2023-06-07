@@ -38,6 +38,9 @@
         </span>
 
         <div class="toolbar"></div>
+        <mat-card class="success-message" *ngIf="showSuccessMessage">
+          You logged out!
+        </mat-card>
         <div class="toolbar" fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
           <ul fxLayout fxLayoutGap="10" class="navigaton-items">
             <li *ngIf="!loggedInUser"><a routerLink="/login">Login</a></li>
@@ -48,6 +51,11 @@
             <li><a routerLink="/main">Main</a></li>
             <li><a routerLink="/gallery">Inspiration</a></li>
             <li><a routerLink="/contact">Contact</a></li>
+            <li>
+              <a routerLink="/profile">
+                <mat-icon>account_circle</mat-icon>
+              </a>
+            </li>
           </ul>
         </div>
       </mat-toolbar>

@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   loadingSubscription?: Subscription;
   loading: boolean = false;
+  showSuccessMessage: boolean = false;
+  showErrorMessage: boolean = false;
   constructor(
     private router: Router,
     private loadingService: FakeLoadingService,
@@ -36,13 +38,23 @@ export class LoginComponent implements OnInit, OnDestroy {
       .then((cred) => {
         console.log(cred);
         this.loading = true;
-        
-        this.router.navigateByUrl('/main');
+        this.showSuccessMessage = true;
+
+        setTimeout(() => {
+          this.showSuccessMessage = false;
+        }, 3000);
+
+        //this.router.navigateByUrl('/main');
         this.loading = false;
       })
       .catch((error) => {
         console.error(error);
         this.loading = false;
+        this.showErrorMessage = true;
+
+        setTimeout(() => {
+          this.showErrorMessage = false;
+        }, 3000);
       });
   }
 

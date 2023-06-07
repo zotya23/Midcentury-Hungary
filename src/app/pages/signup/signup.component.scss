@@ -7,14 +7,15 @@
 }
 
 .main_component {
-  height: 85vh;
+  height: 90vh;
 
   align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  margin: 1,5%;
 }
 
 form {
@@ -42,8 +43,57 @@ mat-form-field {
 }
 mat-card {
   width: 90%;
-  padding: 40px;
+  padding: 0.5%;
   text-align: center;
   justify-content: center;
 }
 
+.mat-error {
+  color: red;
+}
+.success-message {
+  margin-top: 0.5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  width: 25vh;
+  transform: translateX(-50%);
+  background-color: green;
+  color: white;
+  font-size:20px;
+  padding: 10px;
+  text-align: center;
+  transition: opacity 2s ease; /* Animációhoz */
+  opacity: 1; /* Alapértelmezett érték */
+}
+
+.success-message.hide {
+  opacity: 0; /* Rejtett állapot */
+}
+.error-message {
+  margin-top: 0.5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  width: 25vh;
+  transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  font-size:20px;
+  padding: 10px;
+  text-align: center;
+  transition: opacity 2s ease;
+  opacity: 1;
+}
+
+.error-message.hide {
+  opacity: 0;
+}

@@ -13,12 +13,12 @@ main {
 }
 
 .main_container {
-  width: 100%;
+  width: 99%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 5px;
+  margin: 1%;
 }
 
 .card_container {
@@ -34,8 +34,8 @@ mat-card {
 }
 
 .imgincard{
-  height: 350px;
-  padding: 5px;
+  height: 38vh;
+  padding: 5%;
 }
 
 @media screen and (max-width: 768px) {
@@ -54,3 +54,6 @@ h1{
 .imgincard:hover {
   transform: rotateY(180deg);
 }
+
+  
+

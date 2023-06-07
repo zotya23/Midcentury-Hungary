@@ -1,42 +1,94 @@
-<body>
-  <div class="main_component div-flex">
-    <mat-card class="div-flex">
-      <h1>Register an account!</h1>
-      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+<body class="main_component">
+  <mat-card class="div-flex">
+    <h1>Register an account!</h1>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label for="email">Email:</mat-label>
+        <input matInput type="text" formControlName="email" />
+        <mat-error
+          *ngIf="
+            signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched
+          "
+          class="mat-error"
+        >
+          Email is required and must be a valid email address.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label for="password">Password:</mat-label>
+        <input matInput type="password" formControlName="password" />
+        <mat-error
+          *ngIf="
+            signUpForm.get('password')?.invalid &&
+            signUpForm.get('password')?.touched
+          "
+          class="mat-error"
+        >
+          Password is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label for="rePassword">Confirm password:</mat-label>
+        <input matInput type="password" formControlName="rePassword" />
+        <mat-error
+          *ngIf="signUpForm.get('rePassword')?.hasError('required')"
+          class="mat-error"
+        >
+          Password confirmation is required.
+        </mat-error>
+        <mat-error
+          *ngIf="signUpForm.get('rePassword')?.hasError('mismatch')"
+          class="mat-error"
+        >
+          Passwords do not match.
+        </mat-error>
+      </mat-form-field>
+      <div class="name" formGroupName="name" class="subForm">
         <mat-form-field>
-          <mat-label for="email">Email: </mat-label>
-          <input matInput type="text" formControlName="email" />
+          <mat-label for="firstname">First name:</mat-label>
+          <input matInput type="text" formControlName="firstname" />
+          <mat-error
+            *ngIf="
+              signUpForm.get('name.firstname')?.invalid &&
+              signUpForm.get('name.firstname')?.touched
+            "
+            class="mat-error"
+          >
+            First name is required.
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <mat-label for="password">Password: </mat-label>
-          <input matInput type="password" formControlName="password" />
+          <mat-label for="lastname">Last name:</mat-label>
+          <input matInput type="text" formControlName="lastname" />
+          <mat-error
+            *ngIf="
+              signUpForm.get('name.lastname')?.invalid &&
+              signUpForm.get('name.lastname')?.touched
+            "
+            class="mat-error"
+          >
+            Last name is required.
+          </mat-error>
         </mat-form-field>
-        <mat-form-field>
-          <mat-label for="rePassword">Confirm password: </mat-label>
-          <input matInput type="password" formControlName="rePassword" />
-        </mat-form-field>
-        <div class="name" formGroupName="name" class="subForm">
-          <mat-form-field>
-            <mat-label for="firstname">First name: </mat-label>
-            <input matInput type="text" formControlName="firstname" />
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label for="firstname">Last name: </mat-label>
-            <input matInput type="text" formControlName="lastname" />
-          </mat-form-field>
-        </div>
-        <div>
-          <span class="buttons">
-            <button mat-raised-button color="primary" type="submit">
-              Register
-            </button> </span
-          ><span class="buttons">
-            <button mat-raised-button color="primary" (click)="goBack()">
-              Back
-            </button>
-          </span>
-        </div>
-      </form>
-    </mat-card>
-  </div>
+      </div>
+      <div>
+        <span class="buttons">
+          <button mat-raised-button color="primary" type="submit">
+            Register
+          </button>
+        </span>
+        <span class="buttons">
+          <button mat-raised-button color="primary" (click)="goBack()">
+            Back
+          </button>
+        </span>
+      </div>
+    </form>
+  </mat-card>
+  <mat-card class="success-message" *ngIf="showSuccessMessage">
+    You signed up successfully! Now you are logged in as well!
+  </mat-card>
+  <mat-card class="error-message" *ngIf="showErrorMessage">
+    Sign up failed! Please check is there any errors!
+  </mat-card>
 </body>

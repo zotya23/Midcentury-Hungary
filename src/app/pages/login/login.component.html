@@ -28,5 +28,11 @@
         </span>
       </span>
     </mat-card>
+    <mat-card class="success-message" *ngIf="showSuccessMessage">
+      You logged in successfully!
+    </mat-card>
+    <mat-card class="error-message" *ngIf="showErrorMessage">
+      Login failed! Please check your email or password and try again!
+    </mat-card>
   </div>
 </body>

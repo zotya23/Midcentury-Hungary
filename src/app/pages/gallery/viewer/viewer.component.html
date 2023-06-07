@@ -13,11 +13,11 @@
           <div>{{ imageInput.user_name }}</div>
         </mat-card-content>
       </span>
-      <span fxFlex="1 1 50%">
+      <span fxFlex="1 1 45%">
         <mat-card-actions class="commentinput">
           <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
             <div>
-              <mat-form-field>
+              <mat-form-field class="textinput">
                 <mat-label for="username">Username: </mat-label>
                 <input matInput type="text" formControlName="username" />
               </mat-form-field>

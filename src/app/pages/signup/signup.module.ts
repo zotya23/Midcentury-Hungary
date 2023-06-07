@@ -9,6 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatError } from '@angular/material/form-field';
+
+
 
 @NgModule({
   declarations: [SignupComponent],
@@ -25,6 +28,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatButtonModule,
     FlexLayoutModule,
+    
   ],
 })
 export class SignupModule {}

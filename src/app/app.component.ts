@@ -26,6 +26,7 @@ type MyTheme = 'dark' | 'light';
 })
 export class AppComponent implements OnInit {
   isDarkTheme: boolean = true;
+  showSuccessMessage: boolean = false;
   title(title: any) {
     throw new Error('Method not implemented.');
   }
@@ -92,6 +93,10 @@ export class AppComponent implements OnInit {
     this.authService
       .logout()
       .then(() => {
+        this.showSuccessMessage = true;
+        setTimeout(() => {
+      this.showSuccessMessage = false;
+    }, 3000);
         console.log('Logged out successfully.');
       })
       .catch((error) => {
