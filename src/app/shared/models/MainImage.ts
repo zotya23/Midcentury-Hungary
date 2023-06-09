@@ -1,7 +1,8 @@
 export interface MainImage {
-  isFlipped: any;
+  isFlipped: boolean;
   id: string;
   name: string;
   image_url: string;
-  price: string
+  price: string;
+  details: string;
 }

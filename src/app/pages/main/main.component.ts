@@ -5,7 +5,13 @@ import { Observable } from 'rxjs';
 import { MainImagesService } from 'src/app/shared/services/main-images.service';
 import { MainImage } from '../../shared/models/MainImage';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-main',
@@ -13,15 +19,21 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   styleUrls: ['./main.component.scss'],
   animations: [
     trigger('flip', [
-      state('front', style({
-        transform: 'rotateY(0deg)'
-      })),
-      state('back', style({
-        transform: 'rotateY(180deg)'
-      })),
-      transition('front <=> back', animate('300ms ease-out'))
-    ])
-  ]
+      state(
+        'front',
+        style({
+          transform: 'rotateY(0deg)',
+        })
+      ),
+      state(
+        'back',
+        style({
+          transform: 'rotateY(180deg)',
+        })
+      ),
+      transition('front <=> back', animate('300ms ease-out')),
+    ]),
+  ],
 })
 export class MainComponent implements OnInit {
   images: MainImage[] = [];
@@ -30,7 +42,7 @@ export class MainComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private mainImageService: MainImagesService,
-    private storage: AngularFireStorage 
+    private storage: AngularFireStorage
   ) {}
 
   ngOnInit(): void {
@@ -51,5 +63,8 @@ export class MainComponent implements OnInit {
   loadImage(imageUrl: string): Observable<string> {
     return this.mainImageService.loadImage(imageUrl); // use loadImage from MainImagesService to get download URL
   }
-  
+
+  navigateToProductDetail(image: MainImage) {
+    this.router.navigate(['/product', image.id]);
+  }
 }

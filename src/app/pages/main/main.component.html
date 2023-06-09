@@ -4,14 +4,16 @@
     <div class="card_container" *ngFor="let image of images">
       <mat-card>
         <ng-container *ngIf="image.image_url">
-          <img
-            class="imgincard"
-            [src]="image.image_url"
-            alt="{{ image.id }}"
-            [@flip]="image.isFlipped ? 'back' : 'front'"
-            (mouseenter)="image.isFlipped = true"
-            (mouseleave)="image.isFlipped = false"
-          />
+          <a [routerLink]="'/product-details/' + image.id">
+            <img
+              class="imgincard"
+              [src]="image.image_url"
+              alt="{{ image.id }}"
+              [@flip]="image.isFlipped ? 'back' : 'front'"
+              (mouseenter)="image.isFlipped = true"
+              (mouseleave)="image.isFlipped = false"
+            />
+          </a>
         </ng-container>
         <mat-card-content>
           <h2>{{ image.name }}</h2>

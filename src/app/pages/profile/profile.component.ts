@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/models/User';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,24 +8,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  currentUser: Observable<User | undefined> | undefined;
+  currentUser: User | null = null;
 
-
-  constructor(
-    private afAuth: AngularFireAuth,
-    private firestore: AngularFirestore
-  ) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.afAuth.authState.subscribe((user) => {
-      if (user) {
-        this.currentUser = this.firestore
-          .collection<User>('users')
-          .doc(user.uid)
-          .valueChanges();
-      } else {
-        this.currentUser = undefined;
-      }
+    this.authService.getCurrentUser().subscribe((user) => {
+      this.currentUser = user;
     });
   }
 }

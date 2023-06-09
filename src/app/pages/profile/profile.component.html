@@ -1,14 +1,22 @@
+
+
 <body>
-  <div>
-    Profile page
-  </div>
-  <div *ngIf="currentUser | async as user">
+  <h1>Welcome to the Profile page. It's under development...</h1>
+
+  <div *ngIf="currentUser">
     <h2>
-      Welcome, {{ user.name.firstname }} {{ user.name.lastname }}!
+      Welcome, {{ currentUser.name.firstname }} {{ currentUser.name.lastname }}!
     </h2>
-    <p>Email: {{ user.email }}</p>
-    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ currentUser.email }}</p>
+    <p>Username: {{ currentUser.username }}</p>
   </div>
+  
 </body>
+
+
+
+
+
+
 
 

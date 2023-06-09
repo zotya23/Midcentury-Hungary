@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './shared/services/auth.guard';
+import { ProductionDetailsComponent } from './pages/main/production-details/production-details.component';
 
 // lazy-loading
 const routes: Routes = [
@@ -49,6 +50,8 @@ const routes: Routes = [
       import('./pages/profile/profile.module').then((m) => m.ProfileModule),
     canActivate: [AuthGuard],
   },
+  { path: 'product-details/:id', component: ProductionDetailsComponent },
+
   {
     path: '**',
     redirectTo: '/not-found',

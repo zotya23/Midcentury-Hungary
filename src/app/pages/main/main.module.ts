@@ -13,9 +13,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { ProductionDetailsComponent } from './production-details/production-details.component';
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [MainComponent, ProductionDetailsComponent],
   imports: [
     CommonModule,
     MainRoutingModule,

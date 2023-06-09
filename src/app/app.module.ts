@@ -41,6 +41,7 @@ import { MatCardModule } from '@angular/material/card';
     MatSlideToggleModule,
     MatSelectModule,
     MatCardModule,
+  
     
 
     AngularFireModule.initializeApp(environment.firebase),

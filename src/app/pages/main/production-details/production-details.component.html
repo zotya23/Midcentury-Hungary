@@ -1,0 +1,19 @@
+<body>
+  <h2>Product Details</h2>
+  <main>
+    <section>
+      <mat-card>
+        <div *ngIf="image">
+          <div class="image-container">
+            <img [src]="image.image_url" alt="{{ image.id }}" />
+          </div>
+          <div class="product-details">
+            <h3>{{ image.name }}</h3>
+            <p>Price: {{ image.price }}</p>
+            <p>Description: {{ image.details }}</p>
+          </div>
+        </div>
+      </mat-card>
+    </section>
+  </main>
+</body>
