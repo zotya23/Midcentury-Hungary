@@ -1,7 +1,3 @@
-
-
-
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MainImage } from '../../../shared/models/MainImage';
@@ -29,7 +25,6 @@ export class ProductionDetailsComponent {
       }
     });
   }
-  
 
   loadProductDetails(id: string) {
     this.mainImageService.loadImageMeta().subscribe((images) => {

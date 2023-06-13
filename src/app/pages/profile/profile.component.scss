@@ -1,3 +1,28 @@
-body{
-    height: 500px;
+.container {
+  margin-top: -15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-bottom: 10%;
+}
+
+.card {
+  width: 400px;
+  margin: 2%;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 80%;
+    margin: 5%;
+  }
+}
+
+.text-center {
+  text-align: center;
 }

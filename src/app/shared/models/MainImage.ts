@@ -5,4 +5,5 @@ export interface MainImage {
   image_url: string;
   price: string;
   details: string;
+  available: string;
 }

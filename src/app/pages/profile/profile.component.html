@@ -1,22 +1,26 @@
-
-
 <body>
-  <h1>Welcome to the Profile page. It's under development...</h1>
+  <div class="container">
+    <div class="card">
+      <mat-card>
+        <mat-card-title class="text-center"><h3>User's datas</h3></mat-card-title>
+        <mat-card-content>
+          <div *ngIf="user">
+            <p>Email: {{ user.email }}</p>
+            <p>Username: {{ user.username }}</p>
+            <p>First Name: {{ user.name.firstname }}</p>
+            <p>Last Name: {{ user.name.lastname }}</p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
 
-  <div *ngIf="currentUser">
-    <h2>
-      Welcome, {{ currentUser.name.firstname }} {{ currentUser.name.lastname }}!
-    </h2>
-    <p>Email: {{ currentUser.email }}</p>
-    <p>Username: {{ currentUser.username }}</p>
+    <div class="card">
+      <mat-card>
+        <mat-card-title class="text-center"><h3>Cart</h3></mat-card-title>
+        <mat-card-content>
+          <p>Under development...</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
-  
 </body>
-
-
-
-
-
-
-
-

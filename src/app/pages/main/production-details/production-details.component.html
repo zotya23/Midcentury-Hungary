@@ -9,8 +9,18 @@
           </div>
           <div class="product-details">
             <h3>{{ image.name }}</h3>
-            <p>Price: {{ image.price }}</p>
-            <p>Description: {{ image.details }}</p>
+            <h4>Price: {{ image.price }}</h4>
+            <p
+              class="available"
+              [ngStyle]="{ color: image.available === 'Yes' ? 'green' : 'red' }"
+            >
+              Available: {{ image.available }}
+            </p>
+
+            <p>
+              Description:<br />
+              {{ image.details }}
+            </p>
           </div>
         </div>
       </mat-card>
