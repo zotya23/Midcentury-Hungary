@@ -1,4 +1,8 @@
 <body>
+  
+  <mat-icon class="backbutton" (click)="goBack()">arrow_back_ios</mat-icon>
+
+
   <h2>Product Details</h2>
   <main>
     <section>
@@ -16,6 +20,9 @@
             >
               Available: {{ image.available }}
             </p>
+            <button mat-icon-button color="primary" (click)="addToCart(image)">
+              <mat-icon>add_shopping_cart</mat-icon>
+            </button>
 
             <p>
               Description:<br />

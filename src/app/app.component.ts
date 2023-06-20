@@ -14,6 +14,7 @@ import { Title } from '@angular/platform-browser';
 import { ThemeService } from './shared/services/theme.service';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { ThemePalette } from '@angular/material/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 type MyTheme = 'dark' | 'light';
 
@@ -40,7 +41,8 @@ export class AppComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
     private titleService: Title,
-    private themeService: ThemeService
+    
+    private snackBar: MatSnackBar
   ) {
     this.titleService.setTitle('Mid-century Hungary');
   }
@@ -72,7 +74,7 @@ export class AppComponent implements OnInit {
       }
     );
 
-    this.isDarkTheme = localStorage.getItem('theme')==="Dark" ? true : false;
+    this.isDarkTheme = localStorage.getItem('theme') === 'Dark' ? true : false;
   }
 
   changePage(selectedPage: string) {
@@ -93,10 +95,11 @@ export class AppComponent implements OnInit {
     this.authService
       .logout()
       .then(() => {
-        this.showSuccessMessage = true;
-        setTimeout(() => {
-      this.showSuccessMessage = false;
-    }, 3000);
+        this.snackBar.open('You logged out!', 'OK!', {
+          duration: 3000,
+          verticalPosition: 'top',
+          panelClass: ['warning-snackbar'],
+        });
         console.log('Logged out successfully.');
       })
       .catch((error) => {

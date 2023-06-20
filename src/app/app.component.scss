@@ -16,34 +16,13 @@ a:active {
 mat-sidenav {
   width: 200px;
 }
-body{
+body {
   text-decoration: none;
+
   //color: rgb(230, 220, 201);
 }
-.toolbar{
+.toolbar {
   font-size: 20px;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-
-.success-message {
-  margin: auto;
-  position: fixed;
-  left: 27.5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-  max-width: 300px;
-  background-color: green;
-  color: white;
-  font-size: 20px;
-  padding: 10px;
-  text-align: center;
-  transition: opacity 2s ease;
-  opacity: 1;
-}
-
-.success-message.hide {
-  opacity: 0; /* Rejtett állapot */
-}

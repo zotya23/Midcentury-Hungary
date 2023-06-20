@@ -14,6 +14,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { ProductionDetailsComponent } from './production-details/production-details.component';
+import { ProfileModule } from '../profile/profile.module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [MainComponent, ProductionDetailsComponent],
@@ -30,6 +32,8 @@ import { ProductionDetailsComponent } from './production-details/production-deta
     FlexLayoutModule,
     MatTableModule,
     MatSortModule,
+    ProfileModule,
+    MatIconModule
     
   ],
 })

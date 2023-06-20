@@ -7,19 +7,33 @@
           <div *ngIf="user">
             <p>Email: {{ user.email }}</p>
             <p>Username: {{ user.username }}</p>
-            <p>First Name: {{ user.name.firstname }}</p>
-            <p>Last Name: {{ user.name.lastname }}</p>
+            <p>Name: {{ user.name.firstname }} {{ user.name.lastname }}</p>
           </div>
         </mat-card-content>
       </mat-card>
     </div>
 
-    <div class="card">
+    <div class="card cart-card">
       <mat-card>
         <mat-card-title class="text-center"><h3>Cart</h3></mat-card-title>
         <mat-card-content>
-          <p>Under development...</p>
+          <div *ngFor="let item of cartItems">
+            <p>{{ item.name }}</p>
+            <p>{{ item.price }}</p>
+            <div class="snackbar-container">
+              <button mat-icon-button color="warn" (click)="removeFromCart(item)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
         </mat-card-content>
+        <mat-card-actions>
+          <div class="snackbar-container">
+            <button mat-raised-button color="primary" (click)="clearCart(cartItems)">
+              Place Order
+            </button>
+          </div>
+        </mat-card-actions>
       </mat-card>
     </div>
   </div>

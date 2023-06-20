@@ -4,6 +4,9 @@ import { MainImage } from '../../../shared/models/MainImage';
 import { MainImagesService } from '../../../shared/services/main-images.service';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-production-details',
@@ -14,7 +17,10 @@ export class ProductionDetailsComponent {
   image: MainImage | undefined;
   constructor(
     private route: ActivatedRoute,
-    private mainImageService: MainImagesService
+    private mainImageService: MainImagesService,
+    private shoppingCartService: ShoppingCartService,
+    private snackBar: MatSnackBar,
+    private locatioin: Location,
   ) {}
 
   ngOnInit(): void {
@@ -39,5 +45,16 @@ export class ProductionDetailsComponent {
   }
   loadImage(imageUrl: string): Observable<string> {
     return this.mainImageService.loadImage(imageUrl); // use loadImage from MainImagesService to get download URL
+  }
+  addToCart(item: any): void {
+    this.shoppingCartService.addToCart(item);
+    this.snackBar.open('Item added to the cart', 'OK!', {
+      duration: 3000,
+      verticalPosition: 'top',
+      panelClass: ['success-snackbar'],
+    });
+  }
+  goBack() {
+    this.locatioin.back();
   }
 }

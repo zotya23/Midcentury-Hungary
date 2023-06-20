@@ -4,6 +4,7 @@ import { Route, Router } from '@angular/router';
 import { FakeLoadingService } from '../../shared/services/fake-loading.service';
 import { Subscription, subscribeOn } from 'rxjs';
 import { AuthService } from '../../shared/services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private loadingService: FakeLoadingService,
-    private authService: AuthService
+    private authService: AuthService,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {}
@@ -38,11 +40,13 @@ export class LoginComponent implements OnInit, OnDestroy {
       .then((cred) => {
         console.log(cred);
         this.loading = true;
-        this.showSuccessMessage = true;
+        this.snackBar.open('You logged in successfully!', 'Close', {
+          duration: 3000,
+          verticalPosition: 'top',
+          panelClass: ['success-snackbar'],
+        });
 
-        setTimeout(() => {
-          this.showSuccessMessage = false;
-        }, 3000);
+        /**/
 
         //this.router.navigateByUrl('/main');
         this.loading = false;
@@ -50,11 +54,11 @@ export class LoginComponent implements OnInit, OnDestroy {
       .catch((error) => {
         console.error(error);
         this.loading = false;
-        this.showErrorMessage = true;
-
-        setTimeout(() => {
-          this.showErrorMessage = false;
-        }, 3000);
+        this.snackBar.open('Your email or password is incorrect!', 'Try Again!', {
+          duration: 3000,
+          verticalPosition: 'top',
+          panelClass: ['error-snackbar'],
+        });
       });
   }
 

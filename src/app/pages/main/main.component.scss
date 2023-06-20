@@ -18,12 +18,11 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 1%;
 }
 
 .card_container {
   flex: 0 0 calc(100% / 4);
-  margin: 10px;
+  margin: 2%;
 }
 
 mat-card {
@@ -33,9 +32,14 @@ mat-card {
   text-align: center;
 }
 
-.imgincard{
-  height: 38vh;
-  padding: 5%;
+.imgincard {
+  height: 35vh;
+  margin-top: 3%;
+
+  align-self: center;
+  align-items: center;
+  align-items: center;
+  position: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -44,7 +48,7 @@ mat-card {
   }
 }
 
-h1{
+h1 {
   align-self: center;
 }
 .imgincard {
@@ -54,6 +58,3 @@ h1{
 .imgincard:hover {
   transform: rotateY(180deg);
 }
-
-  
-

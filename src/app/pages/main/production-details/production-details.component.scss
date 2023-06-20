@@ -15,6 +15,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0.5%;
 }
 
 main {
@@ -79,6 +80,13 @@ p {
 .available{
   margin-bottom: 5px;
   font-weight: bold;
+}
+
+.backbutton{
+  margin-top: 0.5%;
+  margin-left: 1%;
+  font-size: x-large;
+  
 }
 
 

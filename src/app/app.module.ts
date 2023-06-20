@@ -21,8 +21,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ThemeService } from './shared/services/theme.service';
 import { MatSelectModule } from '@angular/material/select';
-import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileModule } from './pages/profile/profile.module';
 import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 @NgModule({
   declarations: [AppComponent, MenuComponent],
   imports: [
@@ -41,8 +43,8 @@ import { MatCardModule } from '@angular/material/card';
     MatSlideToggleModule,
     MatSelectModule,
     MatCardModule,
-  
-    
+    ProfileModule,
+    MatSnackBarModule,
 
     AngularFireModule.initializeApp(environment.firebase),
     // provideFirebaseApp(() => initializeApp(environment.firebase)),

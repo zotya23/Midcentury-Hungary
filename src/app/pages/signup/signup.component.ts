@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../shared/services/auth.service';
 import { User } from '../../shared/models/User';
 import { UserService } from '../../shared/services/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup',
@@ -26,7 +27,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private locatioin: Location,
     private authService: AuthService,
-    private userService: UserService
+    private userService: UserService,
+    private snackBar: MatSnackBar
   ) {}
   ngOnInit(): void {}
 
@@ -65,39 +67,53 @@ export class SignupComponent implements OnInit {
               console.log('User added successfully!');
               this.showSuccessMessage = true;
 
-              setTimeout(() => {
-                this.showSuccessMessage = false;
-              }, 3000);
+              this.snackBar.open('You registered successfully', 'Close', {
+                duration: 3000,
+                verticalPosition: 'top',
+                panelClass: ['success-snackbar'],
+              });
 
               // Sikeres regisztráció üzenet megjelenítése
             })
             .catch((error) => {
               console.error(error);
-              this.showErrorMessage = true;
-
-              setTimeout(() => {
-                this.showErrorMessage = false;
-              }, 3000);
+              this.snackBar.open(
+                'Registration was unseccessfull! Please check are there any errors below!',
+                'Try Again!',
+                {
+                  duration: 4000,
+                  verticalPosition: 'top',
+                  panelClass: ['error-snackbar'],
+                }
+              );
               // Hibakezelés a felhasználó létrehozása során
             });
         })
         .catch((error) => {
           console.error(error);
-          this.showErrorMessage = true;
-
-          setTimeout(() => {
-            this.showErrorMessage = false;
-          }, 3000);
+          this.snackBar.open(
+            'Registration was unseccessfull! Please check are there any errors!',
+            'Try Again!',
+            {
+              duration: 4000,
+              verticalPosition: 'top',
+              panelClass: ['error-snackbar'],
+            }
+          );
           // Hibakezelés az autentikáció során
         });
     } else {
       // Az űrlap érvénytelen, hibaüzenetek megjelenítése
       this.signUpForm.markAllAsTouched();
-      this.showErrorMessage = true;
-
-      setTimeout(() => {
-        this.showErrorMessage = false;
-      }, 3000);
+      this.snackBar.open(
+        'Registration was unseccessfull! Please check are there any errors!',
+        'Try Again!',
+        {
+          duration: 4000,
+          verticalPosition: 'top',
+          panelClass: ['error-snackbar'],
+        }
+      );
     }
   }
   goBack() {
