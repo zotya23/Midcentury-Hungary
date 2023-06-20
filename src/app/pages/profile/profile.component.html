@@ -19,17 +19,22 @@
         <mat-card-content>
           <div *ngFor="let item of cartItems">
             <p>{{ item.name }}</p>
-            <p>{{ item.price }}</p>
+            <p>{{ item.price }}€</p>
+            
             <div class="snackbar-container">
+              
               <button mat-icon-button color="warn" (click)="removeFromCart(item)">
                 <mat-icon>delete</mat-icon>
               </button>
             </div>
           </div>
+
+
+          <p>Total Price: {{ getTotalPrice() }}€</p>
         </mat-card-content>
         <mat-card-actions>
           <div class="snackbar-container">
-            <button mat-raised-button color="primary" (click)="clearCart(cartItems)">
+            <button mat-raised-button color="primary" (click)="clearCart()">
               Place Order
             </button>
           </div>

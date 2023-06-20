@@ -10,7 +10,9 @@ export class ShoppingCartService {
     []
   );
 
-  constructor() {}
+  constructor() {
+    this.loadCartItems();
+  }
 
   getCartItems(): BehaviorSubject<any[]> {
     return this.cartItemsSubject;
@@ -19,6 +21,7 @@ export class ShoppingCartService {
   addToCart(item: any): void {
     this.cartItems.push(item);
     this.cartItemsSubject.next(this.cartItems);
+    this.saveCartItems();
   }
 
   removeFromCart(item: any): void {
@@ -26,11 +29,30 @@ export class ShoppingCartService {
     if (index > -1) {
       this.cartItems.splice(index, 1);
       this.cartItemsSubject.next(this.cartItems);
+      this.saveCartItems();
     }
   }
 
   clearCart(): void {
     this.cartItems = [];
     this.cartItemsSubject.next(this.cartItems);
+    this.removeCartItems();
   }
+
+  private loadCartItems(): void {
+    const savedCartItems = localStorage.getItem('cartItems');
+    if (savedCartItems) {
+      this.cartItems = JSON.parse(savedCartItems);
+      this.cartItemsSubject.next(this.cartItems);
+    }
+  }
+
+  private saveCartItems(): void {
+    localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
+  }
+
+  private removeCartItems(): void {
+    localStorage.removeItem('cartItems');
+  }
+  
 }

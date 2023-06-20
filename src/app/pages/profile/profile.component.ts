@@ -5,11 +5,8 @@ import { User } from '../../shared/models/User';
 import { UserService } from 'src/app/shared/services/user.service';
 import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatSnackBarConfig } from '@angular/material/snack-bar';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
-interface CustomSnackBarConfig extends MatSnackBarConfig {
-  extraClasses?: string[];
-}
 
 @Component({
   selector: 'app-profile',
@@ -24,7 +21,8 @@ export class ProfileComponent implements OnInit {
     private userService: UserService,
     private shoppingCartService: ShoppingCartService,
     private snackBar: MatSnackBar,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private authService:AuthService,
   ) {}
 
   ngOnInit(): void {
@@ -42,6 +40,9 @@ export class ProfileComponent implements OnInit {
     this.shoppingCartService.getCartItems().subscribe((items) => {
       this.cartItems = items;
     });
+
+   
+
   }
 
   addToCart(item: any): void {
@@ -62,12 +63,29 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  clearCart(item: any): void {
-    this.shoppingCartService.clearCart();
-    this.snackBar.open('You ordered the items', 'Close', {
-      duration: 3000,
-      verticalPosition: 'top',
-      panelClass: ['success-snackbar'],
+  clearCart(): void {
+    if (this.cartItems.length > 0) {
+      this.shoppingCartService.clearCart();
+      this.snackBar.open('You ordered the items', 'Close', {
+        duration: 3000,
+        verticalPosition: 'top',
+        panelClass: ['success-snackbar'],
+      });
+    } else {
+      this.shoppingCartService.clearCart();
+      this.snackBar.open('There is no item in the cart', 'Close', {
+        duration: 3000,
+        verticalPosition: 'top',
+        panelClass: ['error-snackbar'],
+
     });
+  }
+}
+  getTotalPrice(): number {
+    let totalPrice = 0;
+    for (const item of this.cartItems) {
+      totalPrice += Number(item.price);
+    }
+    return totalPrice;
   }
 }
