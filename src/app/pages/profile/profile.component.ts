@@ -1,5 +1,3 @@
-
-
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { User } from '../../shared/models/User';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -41,7 +39,6 @@ export class ProfileComponent implements OnInit {
       this.cartItems = items;
     });
 
-   
 
   }
 

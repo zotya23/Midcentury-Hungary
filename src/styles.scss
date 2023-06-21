@@ -98,8 +98,9 @@ body {
 .mat-mdc-snack-bar-container {
   &.success-snackbar {
     outline: 2px solid rgb(0, 255, 0);
-    border-radius: 4px;
-    --mdc-snackbar-container-color: rgba(93, 93, 93, 0.95);
+    border-radius: 5px;
+    --mdc-snackbar-container-color: rgba(93, 93, 93, 0.5);
+    backdrop-filter: blur(5px);
     --mdc-snackbar-container-font-weigth: bold;
     --mat-mdc-snack-bar-button-color: rgb(0, 255, 0);
     --mdc-snackbar-supporting-text-color: rgb(0, 255, 0);
@@ -110,8 +111,9 @@ body {
 .mat-mdc-snack-bar-container {
   &.error-snackbar {
     outline: 2px solid rgb(255, 36, 36);
-    border-radius: 4px;
-    --mdc-snackbar-container-color: rgba(93, 93, 93, 0.95);
+    border-radius: 5px;
+    --mdc-snackbar-container-color: rgba(93, 93, 93, 0.5);
+    backdrop-filter: blur(5px);
     --mat-mdc-snack-bar-button-color: rgb(255, 36, 36);
     --mat-mdc-snack-bar-button-backround-color: rgb(255, 36, 36);
     --mdc-snackbar-supporting-text-color: rgb(255, 36, 36);
@@ -122,13 +124,14 @@ body {
 .mat-mdc-snack-bar-container {
   &.warning-snackbar {
     outline: 2px solid rgb(251, 124, 26);
-    border-radius: 4px;
-    --mdc-snackbar-container-color: rgba(93, 93, 93, 0.95);
+    border-radius: 5px;
+    --mdc-snackbar-container-color: rgba(93, 93, 93, 0.5);
+    backdrop-filter: blur(5px);
     --mat-mdc-snack-bar-button-color: rgb(251, 124, 26);
     --mat-mdc-snack-bar-button-font-weight: bold;
     --mdc-snackbar-supporting-text-color: rgb(251, 124, 26);
     font-weight: bold;
-    button{
+    button {
       font-weight: bold;
     }
   }

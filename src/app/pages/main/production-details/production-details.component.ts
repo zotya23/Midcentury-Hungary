@@ -1,3 +1,6 @@
+
+
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MainImage } from '../../../shared/models/MainImage';
@@ -20,7 +23,7 @@ export class ProductionDetailsComponent {
     private mainImageService: MainImagesService,
     private shoppingCartService: ShoppingCartService,
     private snackBar: MatSnackBar,
-    private locatioin: Location,
+    private locatioin: Location
   ) {}
 
   ngOnInit(): void {
@@ -46,14 +49,24 @@ export class ProductionDetailsComponent {
   loadImage(imageUrl: string): Observable<string> {
     return this.mainImageService.loadImage(imageUrl); // use loadImage from MainImagesService to get download URL
   }
-  addToCart(item: any): void {
-    this.shoppingCartService.addToCart(item);
-    this.snackBar.open('Item added to the cart', 'OK!', {
-      duration: 3000,
-      verticalPosition: 'top',
-      panelClass: ['success-snackbar'],
-    });
+  addToCart(item: MainImage): void {
+    if (item.available === 'Yes') {
+      this.shoppingCartService.addToCart(item);
+      this.snackBar.open('Item added to the cart', 'OK!', {
+        duration: 3000,
+        verticalPosition: 'top',
+        panelClass: ['success-snackbar'],
+      });
+    } else {
+      this.snackBar.open('Item is not available', 'OK!', {
+        duration: 3000,
+        verticalPosition: 'top',
+        panelClass: ['error-snackbar'],
+      });
+    }
   }
+
+    
   goBack() {
     this.locatioin.back();
   }

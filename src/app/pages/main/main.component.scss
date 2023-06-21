@@ -35,12 +35,14 @@ mat-card {
 .imgincard {
   height: 35vh;
   margin-top: 3%;
-
   align-self: center;
   align-items: center;
   align-items: center;
   position: center;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 
 @media screen and (max-width: 768px) {
   .card_container {

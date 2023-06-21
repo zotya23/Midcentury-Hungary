@@ -3,6 +3,8 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Observable, map, switchMap, of } from 'rxjs';
 import { User } from '../models/User';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { ShoppingCartService } from './shopping-cart.service';
+
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +14,8 @@ export class AuthService {
 
   constructor(
     private auth: AngularFireAuth,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private shoppingCartService: ShoppingCartService
   ) {
     this.currentUser = this.auth.authState.pipe(
       switchMap((firebaseUser) => {
@@ -55,6 +58,7 @@ export class AuthService {
   }
 
   logout() {
+    this.shoppingCartService.removeCartItems();
     return this.auth.signOut();
   }
 

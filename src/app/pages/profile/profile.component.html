@@ -2,7 +2,9 @@
   <div class="container">
     <div class="card">
       <mat-card>
-        <mat-card-title class="text-center"><h3>User's datas</h3></mat-card-title>
+        <mat-card-title class="text-center"
+          ><h3>User's datas</h3></mat-card-title
+        >
         <mat-card-content>
           <div *ngIf="user">
             <p>Email: {{ user.email }}</p>
@@ -20,18 +22,22 @@
           <div *ngFor="let item of cartItems">
             <p>{{ item.name }}</p>
             <p>{{ item.price }}€</p>
-            
+
             <div class="snackbar-container">
-              
-              <button mat-icon-button color="warn" (click)="removeFromCart(item)">
+              <button
+                mat-icon-button
+                color="warn"
+                (click)="removeFromCart(item)"
+              >
                 <mat-icon>delete</mat-icon>
               </button>
             </div>
           </div>
 
-
-          <p>Total Price: {{ getTotalPrice() }}€</p>
+          
         </mat-card-content>
+        <mat-card-footer class="cart-footer">
+          <p>Total Price: {{ getTotalPrice() }}€</p>
         <mat-card-actions>
           <div class="snackbar-container">
             <button mat-raised-button color="primary" (click)="clearCart()">
@@ -39,6 +45,8 @@
             </button>
           </div>
         </mat-card-actions>
+        </mat-card-footer>
+        
       </mat-card>
     </div>
   </div>

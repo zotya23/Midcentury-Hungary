@@ -7,6 +7,7 @@ import { GalleryService } from '../../../shared/services/gallery.service';
 import { CommentService } from '../../../shared/services/comment.service';
 import { UserService } from '../../../shared/services/user.service';
 import { User } from '../../../shared/models/User';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-viewer',
@@ -34,7 +35,8 @@ export class ViewerComponent implements OnInit, OnChanges {
     private router: Router,
     private galleryService: GalleryService,
     private commentService: CommentService,
-    private userService: UserService
+    private userService: UserService,
+    private snackBar: MatSnackBar,
   ) {}
 
   ngOnChanges(): void {
@@ -100,9 +102,12 @@ export class ViewerComponent implements OnInit, OnChanges {
         this.commentService
           .create(this.commentsForm.value as Comment)
           .then((_) => {
-            this.router.navigateByUrl(
-              '/gallery/successful/' + this.commentsForm.get('username')?.value
-            );
+            this.snackBar.open('Your comment added successfully!', 'OK!', {
+              duration: 3000,
+              verticalPosition: 'top',
+              panelClass: ['success-snackbar'],
+            });
+            
           })
           .catch((error) => {
             console.error(error);

@@ -8,6 +8,8 @@
 .galleryImage {
   width: 60%;
   min-width: 150px;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .break {
@@ -15,7 +17,9 @@
   height: 0;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
 }
 
@@ -34,29 +38,23 @@ form {
 
 .div-card {
   padding: 2%;
-
 }
-.tablecard{
-  padding-left: 2%;
-  padding-top: 25px;
-  padding-right: 2%;
-
+.tablecard {
+  margin: 1%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
-.commentinput{
+.commentinput {
   padding: 15px;
-
 }
 
 mat-form-field {
   width: 100%;
-
 }
 
 mat-card-content {
   text-align: center;
 }
 
-.textinput{
+.textinput {
   min-width: 10px;
 }
-

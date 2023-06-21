@@ -36,9 +36,8 @@ mat-card {
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
 }
 
 .image-container {
@@ -46,11 +45,15 @@ mat-card {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  
 }
 
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
 }
 
 .product-details {

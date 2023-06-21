@@ -1,3 +1,5 @@
+
+
 export interface MainImage {
   isFlipped: boolean;
   id: string;

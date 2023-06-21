@@ -18,8 +18,6 @@
     margin-top: 5%;
     flex-direction: column;
     align-items: center;
-   
-    
   }
 
   .card {
@@ -38,6 +36,16 @@
 }
 
 .cart-card {
-  max-height: 400px;
+  max-height: 650px;
   overflow-y: auto;
+}
+
+.cart-footer {
+  position: sticky;
+  bottom: 0;
+  padding: 16px;
+  border-top: 2px solid lightgray;
+  background-color: rgba(167, 167, 167, 0.5);
+  backdrop-filter: blur(5px);
+
 }

@@ -1,7 +1,7 @@
 <head>
   <title>Mid-century Hungary</title>
 </head>
-<body>
+<body style="margin-top: 56px;">
   <mat-sidenav-container>
     <mat-sidenav #sidenav>
       <app-menu
@@ -18,7 +18,16 @@
       class="mat-app-background"
       [ngClass]="{ 'dark-theme-mode': isDarkTheme }"
     >
-      <mat-toolbar>
+      <mat-toolbar
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 9999;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        "
+      >
         <div fxHide.gt-xs>
           <button mat-icon-button (click)="onToggleSidenav(sidenav)">
             <mat-icon>menu</mat-icon>

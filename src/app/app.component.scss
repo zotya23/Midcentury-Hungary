@@ -13,8 +13,11 @@ a:active {
   margin: 0;
 }
 
-mat-sidenav {
-  width: 200px;
+.mat-sidenav {
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(3px);
+  z-index: -1;
 }
 body {
   text-decoration: none;
@@ -25,4 +28,3 @@ body {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
 }
-
