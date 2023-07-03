@@ -15,7 +15,7 @@ const routes: Routes = [
     path: 'gallery',
     loadChildren: () =>
       import('./pages/gallery/gallery.module').then((m) => m.GalleryModule),
-    canActivate: [AuthGuard],
+    
   },
   {
     path: 'contact',

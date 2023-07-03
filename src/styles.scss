@@ -70,16 +70,18 @@ body {
 
 .loading-indicator {
   position: fixed;
-  z-index: 999;
-  height: 0.5em;
-  width: 0.5em;
+  align-content: center;
+  justify-self: center;
+  justify-items: center;
+  z-index: 500;
+  height: 2em;
+  width: 2em;
   overflow: show;
   margin: auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: burlywood;
 }
 
 .loading-indicator::before {
@@ -131,8 +133,5 @@ body {
     --mat-mdc-snack-bar-button-font-weight: bold;
     --mdc-snackbar-supporting-text-color: rgb(251, 124, 26);
     font-weight: bold;
-    button {
-      font-weight: bold;
-    }
   }
 }

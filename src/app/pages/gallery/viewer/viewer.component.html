@@ -4,10 +4,6 @@
   <div class="div-card" *ngIf="imageInput">
     <mat-card fxLayout fxLayoutGap="20px">
       <span fxFlex="1 1 50%">
-        <mat-card-header>
-          <mat-card-title>{{ imageInput.user_name }}</mat-card-title>
-        </mat-card-header>
-
         <mat-card-content>
           <img class="galleryImage" [src]="loadedImage" />
           <div>{{ imageInput.user_name }}</div>
@@ -44,6 +40,18 @@
           </form>
         </mat-card-actions>
       </span>
+    </mat-card>
+
+    <mat-card class="isnpiration_text">
+      <p>
+        Welcome to our website, where you can explore beautifully adorned
+        mid-century furniture pieces. Here, you will find inspiration on how to
+        incorporate these stunning pieces into your own home. Immerse yourself
+        in the beauty of the past and discover high-quality furniture that
+        exudes timeless elegance and unique character. Find the furniture of
+        your dreams and create the perfect ambiance in your home!
+      </p>
+      <p>You can share your thoughts in the form of comments!</p>
     </mat-card>
 
     <div class="tablecard">

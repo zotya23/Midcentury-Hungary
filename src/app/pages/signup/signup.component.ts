@@ -12,8 +12,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
-  showSuccessMessage: boolean = false;
-  showErrorMessage: boolean = false;
   signUpForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
@@ -65,7 +63,6 @@ export class SignupComponent implements OnInit {
             .create(user)
             .then((_) => {
               console.log('User added successfully!');
-              this.showSuccessMessage = true;
 
               this.snackBar.open('You registered successfully', 'Close', {
                 duration: 3000,
@@ -91,16 +88,27 @@ export class SignupComponent implements OnInit {
         })
         .catch((error) => {
           console.error(error);
-          this.snackBar.open(
-            'Registration was unseccessfull! Please check are there any errors!',
-            'Try Again!',
-            {
-              duration: 4000,
-              verticalPosition: 'top',
-              panelClass: ['error-snackbar'],
-            }
-          );
-          // Hibakezelés az autentikáció során
+          if (error.code === 'auth/email-already-in-use') {
+            this.snackBar.open(
+              'This email address is already registered.',
+              'Try Again!',
+              {
+                duration: 4000,
+                verticalPosition: 'top',
+                panelClass: ['error-snackbar'],
+              }
+            );
+          } else {
+            this.snackBar.open(
+              'Registration was unseccessfull! Please check are there any errors!',
+              'Try Again!',
+              {
+                duration: 4000,
+                verticalPosition: 'top',
+                panelClass: ['error-snackbar'],
+              }
+            );
+          }
         });
     } else {
       // Az űrlap érvénytelen, hibaüzenetek megjelenítése

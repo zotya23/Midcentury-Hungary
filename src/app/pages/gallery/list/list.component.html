@@ -1,7 +1,7 @@
 <body>
   <title>Mid-century Hungary</title>
   <div class="imageList">
-    <mat-form-field appearance="fill">
+    <mat-form-field >
       <mat-select (selectionChange)="reload()" [(ngModel)]="chosenImage">
         <mat-option *ngFor="let obj of galleryObjectInput" [value]="obj">{{
           obj.id

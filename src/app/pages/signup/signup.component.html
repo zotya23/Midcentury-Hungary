@@ -1,6 +1,6 @@
 <body class="main_component">
   <mat-card class="div-flex">
-    <h1>Register an account!</h1>
+    <h2>Register an account!</h2>
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
       <mat-form-field>
         <mat-label for="email">Email:</mat-label>
@@ -84,11 +84,5 @@
         </span>
       </div>
     </form>
-  </mat-card>
-  <mat-card class="success-message" *ngIf="showSuccessMessage">
-    You signed up successfully! Now you are logged in as well!
-  </mat-card>
-  <mat-card class="error-message" *ngIf="showErrorMessage">
-    Sign up failed! Please check is there any errors!
   </mat-card>
 </body>
