@@ -1,6 +1,11 @@
-# Week04
+# Midcentury Hungary
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+
+## Server
+Az oldal elérhető az alábbi címen: https://webfejl-2023-52763.web.app
+A projekt egy Retro bútorokat forgalmazó kis webshop.
+Regisztráció és belépés után elérhetővé válik minden oldal. 
 
 ## Development server
 
