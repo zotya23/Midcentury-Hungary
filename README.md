@@ -4,11 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Server
 Az oldal elérhető az alábbi címen: https://webfejl-2023-52763.web.app
+
+## Leírás és használat
 A projekt egy Retro bútorokat forgalmazó kis webshop.
-Regisztráció és belépés után elérhetővé válik minden oldal. 
+Regisztráció és belépés után elérhetővé válik minden oldal és funkció. 
+Ha valaki nem szeretne regisztrálni, akkor ittvan egy account amellyel hozzá lehet férni mindenhez. email: testelo@gmial.com password: testelo01
 
 ## Development server
-
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
