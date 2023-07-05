@@ -103,10 +103,16 @@ body {
     border-radius: 5px;
     --mdc-snackbar-container-color: rgba(93, 93, 93, 0.5);
     backdrop-filter: blur(5px);
-    --mdc-snackbar-container-font-weigth: bold;
-    --mat-mdc-snack-bar-button-color: rgb(0, 255, 0);
     --mdc-snackbar-supporting-text-color: rgb(0, 255, 0);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     font-weight: bold;
+
+    .mat-mdc-snack-bar-action {
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      --mat-mdc-snack-bar-button-color: rgb(0, 255, 0);
+      backdrop-filter: blur(5px);
+      font-weight: bold;
+    }
   }
 }
 
@@ -116,10 +122,16 @@ body {
     border-radius: 5px;
     --mdc-snackbar-container-color: rgba(93, 93, 93, 0.5);
     backdrop-filter: blur(5px);
-    --mat-mdc-snack-bar-button-color: rgb(255, 36, 36);
-    --mat-mdc-snack-bar-button-backround-color: rgb(255, 36, 36);
     --mdc-snackbar-supporting-text-color: rgb(255, 36, 36);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     font-weight: bold;
+
+    .mat-mdc-snack-bar-action {
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      --mat-mdc-snack-bar-button-color: rgb(255, 36, 36);
+      backdrop-filter: blur(5px);
+      font-weight: bold;
+    }
   }
 }
 
@@ -129,9 +141,15 @@ body {
     border-radius: 5px;
     --mdc-snackbar-container-color: rgba(93, 93, 93, 0.5);
     backdrop-filter: blur(5px);
-    --mat-mdc-snack-bar-button-color: rgb(251, 124, 26);
-    --mat-mdc-snack-bar-button-font-weight: bold;
     --mdc-snackbar-supporting-text-color: rgb(251, 124, 26);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     font-weight: bold;
+
+    .mat-mdc-snack-bar-action {
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      --mat-mdc-snack-bar-button-color: rgb(251, 124, 26);
+      backdrop-filter: blur(5px);
+      font-weight: bold;
+    }
   }
 }

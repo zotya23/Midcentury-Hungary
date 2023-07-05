@@ -64,7 +64,7 @@ export class SignupComponent implements OnInit {
             .then((_) => {
               console.log('User added successfully!');
 
-              this.snackBar.open('You registered successfully!', 'OK', {
+              this.snackBar.open('You registered successfully! Now you are logged in as well', 'OK!', {
                 duration: 3000,
                 verticalPosition: 'top',
                 panelClass: ['success-snackbar'],
