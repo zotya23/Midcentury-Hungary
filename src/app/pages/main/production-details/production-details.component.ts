@@ -52,13 +52,13 @@ export class ProductionDetailsComponent {
   addToCart(item: MainImage): void {
     if (item.available === 'Yes') {
       this.shoppingCartService.addToCart(item);
-      this.snackBar.open('Item added to the cart', 'OK!', {
+      this.snackBar.open('Item added to the cart!', 'OK!', {
         duration: 3000,
         verticalPosition: 'top',
         panelClass: ['success-snackbar'],
       });
     } else {
-      this.snackBar.open('Item is not available', 'OK!', {
+      this.snackBar.open('Item is not available!', 'OK!', {
         duration: 3000,
         verticalPosition: 'top',
         panelClass: ['error-snackbar'],

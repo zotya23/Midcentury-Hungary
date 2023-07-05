@@ -64,7 +64,7 @@ export class SignupComponent implements OnInit {
             .then((_) => {
               console.log('User added successfully!');
 
-              this.snackBar.open('You registered successfully', 'Close', {
+              this.snackBar.open('You registered successfully!', 'OK', {
                 duration: 3000,
                 verticalPosition: 'top',
                 panelClass: ['success-snackbar'],
@@ -90,7 +90,7 @@ export class SignupComponent implements OnInit {
           console.error(error);
           if (error.code === 'auth/email-already-in-use') {
             this.snackBar.open(
-              'This email address is already registered.',
+              'This email address is already registered!',
               'Try Again!',
               {
                 duration: 4000,

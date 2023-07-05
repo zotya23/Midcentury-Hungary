@@ -44,7 +44,7 @@ export class ProfileComponent implements OnInit {
 
   addToCart(item: any): void {
     this.shoppingCartService.addToCart(item);
-    this.snackBar.open('Item added to cart', 'Close', {
+    this.snackBar.open('Item added to cart!', 'Close', {
       duration: 3000,
       verticalPosition: 'top',
       panelClass: ['success-snackbar'],
@@ -53,7 +53,7 @@ export class ProfileComponent implements OnInit {
 
   removeFromCart(item: any): void {
     this.shoppingCartService.removeFromCart(item);
-    this.snackBar.open('Item removed from cart', 'Close', {
+    this.snackBar.open('Item removed from cart!', 'Close', {
       duration: 3000,
       verticalPosition: 'top',
       panelClass: ['error-snackbar'],
@@ -63,14 +63,14 @@ export class ProfileComponent implements OnInit {
   clearCart(): void {
     if (this.cartItems.length > 0) {
       this.shoppingCartService.clearCart();
-      this.snackBar.open('You ordered the items', 'Close', {
+      this.snackBar.open('You ordered the items!', 'Close', {
         duration: 3000,
         verticalPosition: 'top',
         panelClass: ['success-snackbar'],
       });
     } else {
       this.shoppingCartService.clearCart();
-      this.snackBar.open('There is no item in the cart', 'Close', {
+      this.snackBar.open('There is no item in the cart!', 'Close', {
         duration: 3000,
         verticalPosition: 'top',
         panelClass: ['error-snackbar'],
