@@ -1,5 +1,5 @@
 .container {
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -46,7 +46,6 @@
 .cart-card {
   max-height: 650px;
   overflow-y: auto;
-  margin: 1%;
 }
 
 .cart-item {
@@ -62,4 +61,3 @@
   display: flex;
   align-items: center;
 }
-
