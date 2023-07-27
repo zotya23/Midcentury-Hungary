@@ -153,3 +153,8 @@ body {
     }
   }
 }
+
+.topunit.mat-mdc-select-panel {
+  background-color: rgba(188, 188, 188, 0.6);
+  backdrop-filter: blur(3px);
+}
