@@ -1,7 +1,6 @@
 mat-card {
-  padding: 10%;
+  padding: 5%;
   align-self: center;
-
 }
 mat-card-header {
   display: initial;
@@ -19,12 +18,11 @@ mat-card-header {
   height: 100vh;
 }
 .map {
-  margin: 1%;
-  paddin: 1%;
+  margin-top: 10%;
 }
 
 .map2 {
   padding: 2px;
-  width: 70%;
+  width: fit-content;
   margin: 1%;
 }
