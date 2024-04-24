@@ -3,10 +3,6 @@ a {
   //color: rgb(230, 220, 201);
 }
 
-a:hover,
-a:active {
-  color: white;
-}
 .navigaton-items {
   list-style: none;
   padding: 0;
@@ -25,6 +21,31 @@ body {
   //color: rgb(230, 220, 201);
 }
 .toolbar {
-  font-size: 20px;
+  font-size: 21px;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.toolbar a {
+  position: relative;
+  text-decoration: none;
+  color: rgb(89, 89, 89);
+}
+.toolbar a:hover,
+.toolbar a:active {
+  color: rgb(0, 0, 0);
+}
+.toolbar a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.toolbar a:hover::after {
+  visibility: visible;
+  width: 100%;
 }

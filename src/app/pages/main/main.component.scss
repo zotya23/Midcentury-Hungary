@@ -3,6 +3,9 @@ main {
   flex-direction: column;
   height: 100%;
 }
+h1 {
+  align-self: center;
+}
 
 .main_component {
   padding: 10px;
@@ -31,32 +34,39 @@ mat-card {
   align-items: center;
   text-align: center;
 }
-
-.imgincard {
-  height: 35vh;
-  margin-top: 3%;
-  align-self: center;
-  align-items: center;
-  align-items: center;
-  position: center;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-
 @media screen and (max-width: 768px) {
   .card_container {
     flex: 0 0 calc(100% - 40px);
   }
 }
 
-h1 {
-  align-self: center;
-}
 .imgincard {
-  transition: transform 0.3s ease-out;
+  height: 35vh;
+  margin-top: 3%;
+  align-self: center;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden; 
+  transition: box-shadow 0.3s ease-out;
+}
+
+.imgincard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); 
+  transition: background 0.3s ease-out;
+  border-radius: 4px;
 }
 
 .imgincard:hover {
-  transform: rotateY(180deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.435); 
+}
+
+.imgincard:hover::before {
+  background: rgba(0, 0, 0, 0.595); 
 }

@@ -50,12 +50,12 @@ mat-card {
   font-size: 20px;
   padding: 10px;
   text-align: center;
-  transition: opacity 2s ease; /* Animációhoz */
-  opacity: 1; /* Alapértelmezett érték */
+  transition: opacity 2s ease; 
+  opacity: 1; 
 }
 
 .success-message.hide {
-  opacity: 0; /* Rejtett állapot */
+  opacity: 0; 
 }
 .error-message {
   position: fixed;

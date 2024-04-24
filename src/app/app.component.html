@@ -24,8 +24,8 @@
           top: 0;
           left: 0;
           right: 0;
-          z-index: 9999;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          z-index: 100;
+          box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
         "
       >
         <div fxHide.gt-xs>
@@ -34,7 +34,7 @@
           </button>
         </div>
         <span>
-          <div>Mid-century Hungary</div>
+          <div style="font-weight: bold;">Mid-century Hungary</div>
         </span>
         <span style="margin-left: 30px">
           <mat-slide-toggle
@@ -52,16 +52,29 @@
         </mat-card>
         <div class="toolbar" fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
           <ul fxLayout fxLayoutGap="10" class="navigaton-items">
-            <li *ngIf="!loggedInUser"><a routerLink="/login">Login</a></li>
-            <li *ngIf="loggedInUser">
-              <a routerLink="/login" (click)="logout()">Logout</a>
+            <li *ngIf="!loggedInUser">
+              <a routerLink="/login" routerLinkActive="active">Login</a>
             </li>
-            <li><a routerLink="/signup">Registration</a></li>
-            <li><a routerLink="/main">Main</a></li>
-            <li><a routerLink="/gallery">Inspiration</a></li>
-            <li><a routerLink="/contact">Contact</a></li>
+            <li *ngIf="loggedInUser">
+              <a
+                routerLink="/login"
+                routerLinkActive="active"
+                (click)="logout()"
+                >Logout</a
+              >
+            </li>
             <li>
-              <a routerLink="/profile">
+              <a routerLink="/signup" routerLinkActive="active">Registration</a>
+            </li>
+            <li><a routerLink="/main" routerLinkActive="active">Main</a></li>
+            <li>
+              <a routerLink="/gallery" routerLinkActive="active">Inspiration</a>
+            </li>
+            <li>
+              <a routerLink="/contact" routerLinkActive="active">Contact</a>
+            </li>
+            <li>
+              <a routerLink="/profile" routerLinkActive="active">
                 <mat-icon>shopping_cart</mat-icon>
               </a>
             </li>

@@ -9,9 +9,7 @@
               class="imgincard"
               [src]="image.image_url"
               alt="{{ image.id }}"
-              [@flip]="image.isFlipped ? 'back' : 'front'"
-              (mouseenter)="image.isFlipped = true"
-              (mouseleave)="image.isFlipped = false"
+              
             />
           </a>
         </ng-container>
