@@ -12,10 +12,10 @@ Ha valaki nem szeretne regisztrálni, akkor ittvan egy account amellyel hozzá l
 
 ## Néhány kép a bemutatáshoz
 
-![image](https://github.com/zotya23/Midcentury-Hungary/assets/105171548/e0914fd5-2b3d-4950-a00f-0277b800081e width=100)
-<img src="[https://your-image-url.type](https://github.com/zotya23/Midcentury-Hungary/assets/105171548/e0914fd5-2b3d-4950-a00f-0277b800081e)" width="100" height="100">
-![image](https://github.com/zotya23/Midcentury-Hungary/assets/105171548/ae5d593c-723e-406e-b359-ad4322c3633a width=100)
-![image](https://github.com/zotya23/Midcentury-Hungary/assets/105171548/294d459f-91bc-4012-af93-3e37e21a9e17 width=100)
+
+<img src="https://github.com/zotya23/Midcentury-Hungary/assets/105171548/e0914fd5-2b3d-4950-a00f-0277b800081e" width="500">
+<img src="https://github.com/zotya23/Midcentury-Hungary/assets/105171548/ae5d593c-723e-406e-b359-ad4322c3633a" width="500">
+<img src="https://github.com/zotya23/Midcentury-Hungary/assets/105171548/294d459f-91bc-4012-af93-3e37e21a9e17" width="500">
 
 
 
